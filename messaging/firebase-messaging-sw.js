@@ -1,11 +1,11 @@
 // Import and configure the Firebase SDK
 // These scripts are made available when the app is served or deployed on Firebase Hosting
 // If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup
-importScripts('/__/firebase/7.14.4/firebase-app.js');
-importScripts('/__/firebase/7.14.4/firebase-messaging.js');
-importScripts('/__/firebase/init.js');
+//var firebase = require("firebase/app");
+//importScripts('/__/firebase/7.14.4/firebase-messaging.js');
+//importScripts('/__/firebase/init.js');
 
-const messaging = firebase.messaging();
+//const messaging = firebase.messaging();
 
 /**
  * Here is is the code snippet to initialize Firebase Messaging in the Service
@@ -20,23 +20,28 @@ const messaging = firebase.messaging();
 
  // Initialize the Firebase app in the service worker by passing in
  // your app's Firebase config object.
- // https://firebase.google.com/docs/web/setup#config-object
- firebase.initializeApp({
-   apiKey: 'api-key',
-   authDomain: 'project-id.firebaseapp.com',
-   databaseURL: 'https://project-id.firebaseio.com',
-   projectId: 'project-id',
-   storageBucket: 'project-id.appspot.com',
-   messagingSenderId: 'sender-id',
-   appId: 'app-id',
-   measurementId: 'G-measurement-id',
- });
+  https://firebase.google.com/docs/web/setup#config-object
+ */
+importScripts('https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/7.14.4/firebase-messaging.js');
+
+if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
+firebase.initializeApp({
+  apiKey: "AIzaSyAG06VsFmRdiAdcTiXS6GxUtbwD8q4fPVs",
+  appId: "1:1008322385264:web:f4bd22cdcf8fad23b52bb5",
+  authDomain: "ticketsbayer.firebaseapp.com",
+  databaseURL: "https://ticketsbayer.firebaseio.com",
+  measurementId: "G-T28JNVKLKX",
+  messagingSenderId: "1008322385264",
+  projectId: "ticketsbayer",
+  storageBucket: "ticketsbayer.appspot.com"
+});
 
  // Retrieve an instance of Firebase Messaging so that it can handle background
  // messages.
  const messaging = firebase.messaging();
  // [END initialize_firebase_in_sw]
- **/
+ 
 
 
 // If you would like to customize notifications that are received in the
@@ -55,4 +60,4 @@ messaging.setBackgroundMessageHandler(function(payload) {
   return self.registration.showNotification(notificationTitle,
     notificationOptions);
 });
-// [END background_handler]
+// [END background_handler]*/

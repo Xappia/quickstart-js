@@ -75,18 +75,28 @@ limitations under the License.
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-<script src="/__/firebase/7.14.4/firebase-app.js"></script>
-<script src="/__/firebase/7.14.4/firebase-messaging.js"></script>
-<script src="/__/firebase/init.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-messaging.js"></script>
 
 <script>
   // [START get_messaging_object]
   // Retrieve Firebase Messaging object.
+  firebase.initializeApp({
+    apiKey: "AIzaSyAG06VsFmRdiAdcTiXS6GxUtbwD8q4fPVs",
+    appId: "1:1008322385264:web:f4bd22cdcf8fad23b52bb5",
+    authDomain: "ticketsbayer.firebaseapp.com",
+    databaseURL: "https://ticketsbayer.firebaseio.com",
+    measurementId: "G-T28JNVKLKX",
+    messagingSenderId: "1008322385264",
+    projectId: "ticketsbayer",
+    storageBucket: "ticketsbayer.appspot.com"
+  });
+
   const messaging = firebase.messaging();
   // [END get_messaging_object]
   // [START set_public_vapid_key]
   // Add the public key generated from the console here.
-  messaging.usePublicVapidKey('<YOUR_PUBLIC_VAPID_KEY_HERE>');
+  messaging.usePublicVapidKey('BB4ecPR1BJgZ1rXV_SBorNRhyHOFxqnITtzw1ZneN8l4OZaaGPAG-_0qrqxJVRDmFKJ5O841AsQaLml8fI0pG08');
   // [END set_public_vapid_key]
 
   // IDs of divs that display Instance ID token UI or request permission UI.
